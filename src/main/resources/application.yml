@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: barberia-api
+  datasource:
+    url: jdbc:postgresql://localhost:5433/barberia
+    username: ${DB_USER:barberia_app}
+    password: ${DB_PASSWORD:dev_clave_segura_123}
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+  flyway:
+    enabled: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health

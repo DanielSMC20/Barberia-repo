@@ -1,0 +1,12 @@
+services:
+  postgres:
+    image: postgres:18
+    container_name: barberia-db
+    env_file: .env
+    ports:
+      - "5433:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql
+
+volumes:
+  pgdata:
